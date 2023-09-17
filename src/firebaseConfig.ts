@@ -9,7 +9,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: process.env.WEB_API_KEY,
+    apiKey: import.meta.env.VITE_WEB_API_KEY,
     authDomain: "squarewords-ca842.firebaseapp.com",
     projectId: "squarewords-ca842",
     storageBucket: "squarewords-ca842.appspot.com",
