@@ -9,7 +9,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCuHoNyDHTiF_5WNdrLC9F39XdiypQIu5k",
+    apiKey: process.env.WEB_API_KEY,
     authDomain: "squarewords-ca842.firebaseapp.com",
     projectId: "squarewords-ca842",
     storageBucket: "squarewords-ca842.appspot.com",
