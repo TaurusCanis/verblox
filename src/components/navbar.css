@@ -1,0 +1,78 @@
+.navbar {
+    font-family: Arial, sans-serif;
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar .main-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar .nav-links {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 10px;
+}
+
+.navbar .main-nav li {
+    text-align: center;
+    margin: 10px auto;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+.navbar .fa-bars {
+    color: #fff;
+    font-size: 24px;
+}
+
+@media (max-width: 600px) {
+    .navbar .main-nav {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        flex-direction: column;
+        max-height: 0;
+        width: 100%; /* make it span the full width */
+        position: absolute; /* take it out of the normal flow */
+        top: 60px; /* position it just below the navbar */
+        left: 0; /* align it to the left */
+        background-color: #333; /* give it the same background color as the navbar */
+        transition: max-height 0.2s ease-out;
+    }
+
+    .navbar .nav-links {
+        padding: 10px;
+    }
+
+    .navbar .show {
+        max-height: 240px;
+    }
+
+    .navbar .navbar-toggle {
+        display: block;
+    }
+
+    .navbar .main-nav li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+}
