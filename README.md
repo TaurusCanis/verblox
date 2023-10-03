@@ -4,7 +4,7 @@ Verblox is a drag-and-drop word puzzle game that challenges players to solve wor
 
 ## Play Now!
 
-[Play Verblox](https://verblox.com/, "Play Verblox")
+[Play Verblox](https://verblox.com/ "Play Verblox")
 
 ## Features
 
