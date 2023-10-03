@@ -2,6 +2,10 @@
 
 Verblox is a drag-and-drop word puzzle game that challenges players to solve word puzzles as quickly as possible. Developed by TaurusCanis, this project demonstrates a robust implementation of React and TypeScript to create an interactive and engaging game experience.
 
+## Play Now!
+
+[Play Verblox](https://verblox.com/, "Play Verblox")
+
 ## Features
 
 - **Drag-and-Drop Gameplay**: Players can drag letters onto the board to form words.
