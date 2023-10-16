@@ -7,6 +7,7 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase
 // import { db } from "../../firebaseConfig"
 import { useNavigate } from "react-router-dom";
 import { createUserDatabaseProfile } from "../../utils/firebaseUtils";
+import { Link } from 'react-router-dom';
 
 /**
  * 
@@ -51,26 +52,36 @@ export default function Register() {
     const { values, handleChange, handleSubmit } = useForm(initialValues, onSubmit);
 
     return (
-        <div className='flex-col j-c-center height-100'>
-            <div className="form-container">
-                <h2>Sign Up</h2>
-                <p id="error-message"></p>
-                <Form id="signup-form" onSubmit={handleSubmit}>
-                    <Label htmlFor="username">Username:</Label>
-                    <Input type="text" id="username" name="username" required value={values.username} onChange={handleChange} />
-
-                    <Label htmlFor="password">Password:</Label>
-                    <Input type="password" id="password" name="password" required value={values.password} onChange={handleChange} />
-
-                    <Label htmlFor="confirm-password">Confirm Password:</Label>
-                    <Input type="password" id="confirm-password" name="confirmPassword" required value={values.confirmPassword} onChange={handleChange} />
-
-                    <Label htmlFor="email">Email:</Label>
-                    <Input type="email" id="email" name="email" required value={values.email} onChange={handleChange} />
-
-                    <Input type="submit" id="signup-btn" name="signup-btn" required value="Sign Up" />
-                </Form>
+        <section className="bg-gray-50 dark:bg-gray-900">
+            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                        <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                            Sign up for an account
+                        </h1>
+                        <p id="error-message"></p>
+                        <Form id="login-form" className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
+                            <div>
+                                <Label htmlFor="username" >Username:</Label>
+                                <Input type="text" id="username" name="username" required value={values.username} onChange={handleChange} />
+                            </div>
+                            <div>
+                                <Label htmlFor="password">Password:</Label>
+                                <Input type="password" id="password" name="password" required value={values.password} onChange={handleChange} />
+                            </div>
+                            <div>
+                                <Label htmlFor="password">Confirm Password:</Label>
+                                <Input type="password" id="confirm-password" name="confirmPassword" required value={values.password} onChange={handleChange} />
+                            </div>
+                            <div>
+                                <Label htmlFor="email">Email:</Label>
+                                <Input type="email" id="email" name="email" required value={values.email} onChange={handleChange} />
+                            </div>
+                            <Input type="submit" id="signup-btn" name="signup-btn" required value="Sign Up" />
+                        </Form>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     )
 }

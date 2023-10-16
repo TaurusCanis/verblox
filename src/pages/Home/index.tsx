@@ -28,33 +28,21 @@ export default function Home() {
     return (
         <>
         { !isLoading && 
-            <div className="container">
-                <h1>Verblox</h1>
-                <h2>Fill the block with letters to form words in each row and column</h2>
-                <Button label="Play Now!" handleClick={() => navigate('/play')}/>
 
-                <h3><Link to="login">Log in</Link> or <Link to="register">Sign up</Link> to save your scores!</h3>
-
-                <ShareButtons />
-{/*     
-                <h2>Current High Scores</h2>
-                <LeaderboardTable rows={rows} />
-                <Button label="View Full Leaderboard" handleClick={() => navigate("/leaderboard")} />
-    
-                <div className="auth-buttons">
-                    <div>
-                        <button id="btn-signup">Sign Up</button>
-                        <h3>Or</h3>
-                        <button id="btn-login">Log In</button>
+            <section className="bg-white dark:bg-gray-900 h-full">
+                <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+                    <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Verblox</h1>
+                    <h2 className="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white">A Daily Word Puzzle Game</h2>
+                    <p className="mb-8 text-lg text-center font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">Fill the block with letters to form words in each row and column</p>
+                    <div className="flex flex-col space-y-4 sm:justify-center sm:space-y-0 sm:space-x-4">
+                        <Button label="Play Now!" handleClick={() => navigate('/play')} />
+                        <div className='py-6'>
+                            <Link to="login">Log in</Link> or <Link to="register">Sign up</Link> to save your scores!
+                        </div> 
+                        <ShareButtons />
                     </div>
-                    <h3>To save you scores!</h3>
                 </div>
-                <div id="share-buttons">
-                    <a href="#" id="btn-share-fb"><i className="fab fa-facebook"></i> Share on Facebook</a>
-                    <a href="#" id="btn-share-tw"><i className="fab fa-twitter"></i> Share on Twitter</a>
-                    <a href="#" id="btn-share-li"><i className="fab fa-linkedin"></i> Share on LinkedIn</a>
-                </div> */}
-            </div>
+            </section>
         }
         </>
     )

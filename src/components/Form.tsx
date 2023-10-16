@@ -3,6 +3,7 @@ import { FormEvent } from 'react';
 interface FormProps {
     id: string;
     onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+    className: string;
     children: React.ReactNode;
   }
   
@@ -15,8 +16,8 @@ interface FormProps {
  * @param {React.ReactNode} props.children - The content inside the form.
  * @returns {JSX.Element} The Form component.
  */
-function Form({ id, onSubmit, children }: FormProps): JSX.Element {
-  return <form id={id} onSubmit={onSubmit}>{children}</form>;
+function Form({ id, onSubmit, className, children }: FormProps): JSX.Element {
+  return <form id={id} className={className} onSubmit={onSubmit}>{children}</form>;
 }
 
 export default Form;

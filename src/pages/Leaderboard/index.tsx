@@ -1,6 +1,6 @@
 import LeaderboardTable from '../../components/LeaderboardTable';
 import ShareButtons from '../../components/ShareButtons';
-import './Leaderboard.css';
+// import './Leaderboard.css';
 import { useAuth } from "../../contexts/AuthContext";  
 import { useEffect, useState } from "react";
 import useGetDailyStats from '../../hooks/useGetDailyStats';
@@ -63,7 +63,7 @@ function Leaderboard(): JSX.Element {
     <>
     { !isLoading &&
     <div>
-      <h1>Leaderboard - Today's Top 10</h1>
+      <h2 className="text-4xl text-center font-extrabold dark:text-white py-8">Leaderboard - Today's Top 10</h2>
       <div id="user-position">
         {rank ? `Your Rank: ${rank}` : null}
       </div>
@@ -74,8 +74,14 @@ function Leaderboard(): JSX.Element {
             <button id="btn-signup">Sign Up</button>
         </div>
       }
-      <LeaderboardTable rows={rows} />
-      <ShareButtons />
+      <div className='w-4/5 mx-auto'>
+        <div className='mb-8'>
+          <LeaderboardTable rows={rows} />
+        </div>
+        <div className='flex justify-center'>
+          <ShareButtons />
+        </div>
+      </div>
     </div>
     }
     </>

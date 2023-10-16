@@ -7,6 +7,7 @@ import { signInWithEmailAndPassword, EmailAuthProvider, linkWithCredential, User
 import { auth, db } from "../../firebaseConfig";
 import { doc, getDoc, setDoc, deleteDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 /**
  * Merges the data associated with an anonymous user into the data of a newly authenticated user.
@@ -63,20 +64,45 @@ export default function Register() {
     const { values, handleChange, handleSubmit } = useForm(initialValues, onSubmit);
 
     return (
-        <div className='flex-col j-c-center height-100'>
-            <div className="form-container">
-                <h2>Login</h2>
-                <p id="error-message"></p>
-                <Form id="login-form" onSubmit={handleSubmit}>
-                    <Label htmlFor="email">Email:</Label>
-                    <Input type="text" id="email" name="email" required value={values.email} onChange={handleChange} />
+        <>
+            <section className="bg-gray-50 dark:bg-gray-900">
+                <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                    <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                                Sign in to your account
+                            </h1>
+                            <p id="error-message"></p>
+                            <Form id="login-form" className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
+                                <div>
+                                    <Label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email:</Label>
+                                    <Input type="text" id="email" name="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required value={values.email} onChange={handleChange} />
+                                </div>
+                                <div>
+                                    <Label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password:</Label>
+                                    <Input type="password" id="password" name="password" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required value={values.password} onChange={handleChange} />
+                                </div>
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-start">
+                                        <div className="flex items-center h-5">
+                                            <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
+                                        </div>
+                                        <div className="ml-3 text-sm">
+                                            <label htmlFor="remember" className="text-gray-500 dark:text-gray-300">Remember me</label>
+                                        </div>
+                                    </div>
+                                    <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
+                                </div>
+                                <button type="submit" className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign in</button>
+                                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                                    Don’t have an account yet? <Link to={"register"} className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</Link>
+                                </p>
+                            </Form>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                    <Label htmlFor="password">Password:</Label>
-                    <Input type="password" id="password" name="password" required value={values.password} onChange={handleChange} />
-
-                    <Input type="submit" id="login-btn" name="login-btn" required value="Login" />
-                </Form>
-            </div>
-        </div>
+    </>
     )
 }

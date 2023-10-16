@@ -1,6 +1,7 @@
 
 interface LabelProps {
     htmlFor: string;
+    className?: string;
     children: React.ReactNode;
   }
 
@@ -12,8 +13,8 @@ interface LabelProps {
  * @param {React.ReactNode} props.children - The content inside the label.
  * @returns {JSX.Element} The Label component.
  */
-function Label({ htmlFor, children }: LabelProps): JSX.Element {
-  return <label htmlFor={htmlFor}>{children}</label>;
+function Label({ htmlFor, className, children }: LabelProps): JSX.Element {
+  return <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor={htmlFor}>{children}</label>;
 }
 
 export default Label;
