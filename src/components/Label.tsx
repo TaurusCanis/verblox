@@ -14,7 +14,7 @@ interface LabelProps {
  * @returns {JSX.Element} The Label component.
  */
 function Label({ htmlFor, className, children }: LabelProps): JSX.Element {
-  return <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor={htmlFor}>{children}</label>;
+  return <label className={`block mb-2 text-sm font-medium text-gray-900 dark:text-white ${className}`} htmlFor={htmlFor}>{children}</label>;
 }
 
 export default Label;
