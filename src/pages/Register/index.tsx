@@ -7,7 +7,6 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase
 // import { db } from "../../firebaseConfig"
 import { useNavigate } from "react-router-dom";
 import { createUserDatabaseProfile } from "../../utils/firebaseUtils";
-import { Link } from 'react-router-dom';
 
 /**
  * 

@@ -1,3 +1,6 @@
+# Environment
+.env
+
 # Logs
 logs
 *.log
@@ -22,3 +25,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#firebase
+.firebase
+src/firebaseConfig.js

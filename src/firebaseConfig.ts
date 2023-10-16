@@ -9,15 +9,16 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_WEB_API_KEY,
-    authDomain: "squarewords-ca842.firebaseapp.com",
-    projectId: "squarewords-ca842",
-    storageBucket: "squarewords-ca842.appspot.com",
-    messagingSenderId: "96123992580",
-    appId: "1:96123992580:web:2a768c091e8191cb349351",
-    measurementId: "G-7VYS48D3CJ"
+  apiKey: "AIzaSyDw66B-rpQHDb6fstv58YbVYFZp2E8GO5M",
+  authDomain: "squarewords-ca842.firebaseapp.com",
+  projectId: "squarewords-ca842",
+  storageBucket: "squarewords-ca842.appspot.com",
+  messagingSenderId: "96123992580",
+  appId: "1:96123992580:web:e81267e986bfcd7c349351",
+  measurementId: "G-L21B9NFLPY"
 };
 
+// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const analytics = getAnalytics(app);
